@@ -61,7 +61,7 @@ function Filter() {
     return (
     <div>
         <div className='flex justify-between items-center mt-12'>
-            <h1 className='text-3xl md:text-4xl xl:text-5xl font-semibold'>Reading<br />Reimagined.</h1>
+            <h1 className='text-3xl md:text-4xl xl:text-5xl font-semibold'>Searching<br />Reimagined.</h1>
             <div onClick={toggleShow} className='w-12 h-12 text-lg md:text-xl xl:text-2xl cursor-pointer flex justify-center items-center transition bg-[#e2e2e2] hover:bg-[#91c8ff] hover:text-white rounded-full'>{show ? <i className="ri-close-line"></i> : <i className="ri-filter-2-line"></i>}</div>
         </div>
         <div id='moreFilters' className={`${show ? 'block' : 'hidden'}`}>

@@ -27,7 +27,7 @@ function Navbar() {
             </div>
         </Link>
         <div className='flex gap-2 items-center w-full md:w-[35%]'>
-            <input value={query} onChange={(e) => changeQuery(e.target.value)} className='border border-black rounded-xl font-semibold p-2 w-full text-base md:text-lg xl:text-xl' type="text" placeholder='Search by books...'/>
+            <input value={query} onChange={(e) => changeQuery(e.target.value)} className='border border-black rounded-xl font-semibold p-2 w-full text-base md:text-lg xl:text-xl' type="text" placeholder='Search for books...'/>
             <button onClick={handleSubmit} className='h-12 w-12 rounded-full p-2 text-base md:text-lg xl:text-xl flex items-center justify-center transition bg-[#e2e2e2] hover:bg-[#91c8ff] hover:text-white'><i className="ri-search-line"></i></button>
             <div className='relative w-12 h-12 flex items-center justify-center text-2xl md:text-3xl xl:text-4xl hover:cursor-pointer' onClick={() => setIsOpen(!isOpen)}>
               <i className="ri-heart-fill" style={{color: 'red'}}></i>
