@@ -76,8 +76,8 @@ function Filter() {
                     ))}
                 </div>
                 <div className='flex gap-4 mt-4'>
-                    <div className={`${genre ? 'block': 'hidden'} cursor-pointer p-2 rounded-xl bg-[#91c8ff]`} onClick={applyFilter}>Apply</div>
-                    <div className={`${genre ? 'block': 'hidden'} cursor-pointer p-2 rounded-xl bg-[#91c8ff]`} onClick={clearFilter}>Clear</div>
+                    <div className={`${genre ? 'block': 'hidden'} cursor-pointer p-2 rounded-xl text-white bg-[#91c8ff]`} onClick={applyFilter}>Apply</div>
+                    <div className={`${genre ? 'block': 'hidden'} cursor-pointer p-2 rounded-xl text-white bg-[#91c8ff]`} onClick={clearFilter}>Clear</div>
                 </div>
             </div>
         </div>
