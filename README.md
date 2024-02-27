@@ -13,6 +13,12 @@ https://page-palette.netlify.app/
 - **Bookmark Favorites:** Save your favorite books to view them later.
 - **Detailed View:** Get detailed information about a book, including its cover, title, author, and description.
 
+## Technologies Used
+
+- React.js
+- Tailwind CSS
+- Google Books API
+
 ## Installation
 
 1. Clone the repository:
