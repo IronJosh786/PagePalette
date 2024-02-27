@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BookmarkContext } from '../contexts/BookmarkContext.jsx';
 import { BooksContext } from '../contexts/BooksContext.jsx';
 import { useContext } from 'react';
@@ -17,7 +17,7 @@ function Navbar() {
   const length = bookmarked.length;
 
   return (
-    <div className='flex flex-col gap-8 md:gap-0 md:flex-row md:justify-between mt-4'>
+    <div className={`flex flex-col gap-8 md:gap-0 md:flex-row md:justify-between mt-4`}>
         <Link to={'/'}>
             <div className='flex gap-4 items-center'>
                 <div className='w-12 h-12 flex items-center justify-center text-2xl md:text-3xl xl:text-4xl rounded-full bg-[#91c8ff] p-2'>

@@ -11,6 +11,7 @@ const BooksContextProvider = ({ children }) => {
   const [novel, setNovel] = useState({});
   const [fiction, setFiction] = useState({});
   const [romance, setRomance] = useState({});
+  const [loading, setLoading] = useState(false);
   const baseUrl = `https://www.googleapis.com/books/v1/volumes?q=`;
 
   const fetchBooksByCriteria = async (criteria) => {
@@ -25,6 +26,7 @@ const BooksContextProvider = ({ children }) => {
   };
 
   async function fetching() {
+    setLoading(true)
     const term = encodeURIComponent(query)
     const subject = encodeURIComponent(genre)
     let allResults = []
@@ -58,15 +60,20 @@ const BooksContextProvider = ({ children }) => {
       .filter(Boolean); 
 
     setBooks(uniqueResults);
+    setLoading(false);
   }
 
   const fetchMoreData = async () => {
     try {
+      setLoading(true);
+
       await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:novel&langRestrict=en&orderBy=newest&key=${googleKey}`).then(res => res.json()).then(data => setNovel(data));
 
       await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:fiction&langRestrict=en&orderBy=newest&key=${googleKey}`).then(res => res.json()).then(data => setFiction(data));
 
       await fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:romance&langRestrict=en&orderBy=newest&key=${googleKey}`).then(res => res.json()).then(data => setRomance(data));
+
+      setLoading(false);
     } catch (error) {
       console.log('Error fetching more data :: ', error);
     }
@@ -89,7 +96,7 @@ const BooksContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <BooksContext.Provider value={{ books, setBooksNull, query, changeQuery, genre, changeGenre, novel, fiction, romance, fetching }}>
+    <BooksContext.Provider value={{ books, setBooksNull, query, changeQuery, genre, changeGenre, novel, fiction, romance, fetching, loading }}>
       {children}
     </BooksContext.Provider>
   );

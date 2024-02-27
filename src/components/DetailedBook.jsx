@@ -41,9 +41,8 @@ function DetailedBook() {
     }, [id]);
 
     if(loading) {
-      return <div className='flex items-center justify-center h-full w-full'>Loading...</div>
+      return <div className='flex items-center justify-center h-full w-full my-24'>Loading...</div>
     }
-
 
     return (
       <div className='w-full h-full flex flex-col md:flex-row mt-20 md:mt-32 gap-4 md:gap-20 md:justify-center md:items-center'>

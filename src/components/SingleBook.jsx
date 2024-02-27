@@ -15,8 +15,8 @@ function SingleBook({ book }) {
 
     return (
         <Link to={`/detailedView/${isbn13}`}>
-            <div key={id} className='shrink-0 w-40 cursor-pointer'>
-                <div className='h-60 w-full'>
+            <div key={id} className='shrink-0 w-32 md:w-40 cursor-pointer transition hover:scale-105'>
+                <div className='h-52 md:h-60 w-full'>
                     <img className='h-full w-full object-cover object-center rounded-xl' src={image} alt="image" />
                 </div>
                 <div className='flex justify-between w-full mt-2'>

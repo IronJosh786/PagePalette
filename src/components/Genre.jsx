@@ -7,7 +7,7 @@ function Genre({genreName, value}) {
 
     const [genreData, setGenreData] = useState({});
 
-    const {novel, fiction, romance} = useContext(BooksContext);
+    const {novel, fiction, romance, loading} = useContext(BooksContext);
 
     const setData = () => {
         if(genreName === 'Novel') {
@@ -28,7 +28,7 @@ function Genre({genreName, value}) {
         <h4 className='mt-8 text-lg md:text-xl xl:text-2xl'>{genreName}</h4>
         <div key={value} className={`mt-4 flex gap-8 overflow-x-scroll overflow-y-hidden p-1 scroller`}>
             {
-                genreData && genreData.items && genreData.items.map(book => <SingleBook key={book.id} book={book}/>)   
+                loading ? (<div className='flex items-center justify-center h-full w-full my-12'>Loading...</div>) : (genreData && genreData.items && genreData.items.map(book => <SingleBook key={book.id} book={book}/>))   
             }
         </div>
     </div>
